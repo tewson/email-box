@@ -4,9 +4,28 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test:watch": "jest --watch",
+    "test": "jest"
   },
-  "author": "Tewson Seeoun <tewson.seeoun@gmail.com> (https://tewson.github.io/)",
+  "author":
+    "Tewson Seeoun <tewson.seeoun@gmail.com> (https://tewson.github.io/)",
   "license": "MIT",
-  "dependencies": {}
+  "peerDependencies": {
+    "react": ">=16.0.0",
+    "react-dom": ">=16.0.0"
+  },
+  "dependencies": {
+    "react": "^16.4.0",
+    "react-dom": "^16.4.0"
+  },
+  "devDependencies": {
+    "babel-core": "^6.26.3",
+    "babel-jest": "^23.0.1",
+    "babel-preset-env": "^1.7.0",
+    "babel-preset-react": "^6.24.1",
+    "enzyme": "^3.3.0",
+    "enzyme-adapter-react-16": "^1.1.1",
+    "enzyme-to-json": "^3.3.4",
+    "jest": "^23.0.1"
+  }
 }

@@ -1,16 +1,23 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`EmailBox should render children correctly 1`] = `
-<div>
-  <div>
-    <h1>
-      Test
-    </h1>
-    <p>
-      Children
-    </p>
-  </div>
-</div>
+<div
+  className="email-box"
+  dangerouslySetInnerHTML={
+    Object {
+      "__html": "<div><h1>Test</h1><p>Children</p></div>",
+    }
+  }
+/>
 `;
 
-exports[`EmailBox should render correctly 1`] = `<div />`;
+exports[`EmailBox should render correctly 1`] = `
+<div
+  className="email-box"
+  dangerouslySetInnerHTML={
+    Object {
+      "__html": "",
+    }
+  }
+/>
+`;

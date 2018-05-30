@@ -1,5 +1,5 @@
 import React from "react";
-import { shallow } from "enzyme";
+import { render, shallow } from "enzyme";
 import toJson from "enzyme-to-json";
 
 import EmailBox from "./EmailBox";
@@ -29,10 +29,31 @@ describe("EmailBox", () => {
 
     const randomChild = <p>{Math.random()}</p>;
 
-    expect(
-      shallow(<EmailBox>{randomChild}</EmailBox>).containsMatchingElement(
-        randomChild
-      )
-    ).toBeTruthy();
+    expect(shallow(<EmailBox>{randomChild}</EmailBox>).html()).toContain(
+      shallow(randomChild).html()
+    );
+  });
+
+  it("should inline css", () => {
+    const css = `
+      .irrelevant-class {
+        color: red;
+      }
+
+      .relevant-class {
+        color: green;
+      }
+    `;
+
+    const wrapper = render(
+      <EmailBox css={css}>
+        <div className="relevant-class" />
+      </EmailBox>
+    );
+
+    const targetDiv = wrapper.find(".relevant-class");
+
+    expect(targetDiv.attr("style")).toContain("color: green");
+    expect(targetDiv.css("color")).toEqual("green");
   });
 });

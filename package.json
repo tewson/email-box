@@ -11,6 +11,7 @@
     "Tewson Seeoun <tewson.seeoun@gmail.com> (https://tewson.github.io/)",
   "license": "MIT",
   "peerDependencies": {
+    "juice": ">=4.0.0",
     "react": ">=16.0.0",
     "react-dom": ">=16.0.0"
   },
@@ -24,6 +25,7 @@
     "enzyme-adapter-react-16": "^1.1.1",
     "enzyme-to-json": "^3.3.4",
     "jest": "^23.0.1",
+    "juice": "^4.2.3",
     "react": "^16.4.0",
     "react-dom": "^16.4.0"
   }

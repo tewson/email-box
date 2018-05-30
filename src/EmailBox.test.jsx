@@ -1,19 +1,21 @@
-import React from "react";
-import { render, shallow } from "enzyme";
-import toJson from "enzyme-to-json";
+/* eslint-env jest */
 
-import EmailBox from "./EmailBox";
+import React from 'react';
+import { render, shallow } from 'enzyme';
+import toJson from 'enzyme-to-json';
 
-describe("EmailBox", () => {
-  it("should be defined", () => {
+import EmailBox from './EmailBox';
+
+describe('EmailBox', () => {
+  it('should be defined', () => {
     expect(EmailBox).toBeDefined();
   });
 
-  it("should render correctly", () => {
+  it('should render correctly', () => {
     expect(toJson(shallow(<EmailBox />))).toMatchSnapshot();
   });
 
-  it("should render children correctly", () => {
+  it('should render children correctly', () => {
     expect(
       toJson(
         shallow(
@@ -22,19 +24,19 @@ describe("EmailBox", () => {
               <h1>Test</h1>
               <p>Children</p>
             </div>
-          </EmailBox>
-        )
-      )
+          </EmailBox>,
+        ),
+      ),
     ).toMatchSnapshot();
 
     const randomChild = <p>{Math.random()}</p>;
 
     expect(shallow(<EmailBox>{randomChild}</EmailBox>).html()).toContain(
-      shallow(randomChild).html()
+      shallow(randomChild).html(),
     );
   });
 
-  it("should inline css", () => {
+  it('should inline css', () => {
     const css = `
       .irrelevant-class {
         color: red;
@@ -54,17 +56,17 @@ describe("EmailBox", () => {
         <div className="relevant-class">
           <h1 className="nested-element">Nested Element</h1>
         </div>
-      </EmailBox>
+      </EmailBox>,
     );
 
-    const targetDiv = wrapper.find(".relevant-class");
+    const targetDiv = wrapper.find('.relevant-class');
 
-    expect(targetDiv.attr("style")).toContain("color: green");
-    expect(targetDiv.css("color")).toEqual("green");
+    expect(targetDiv.attr('style')).toContain('color: green');
+    expect(targetDiv.css('color')).toEqual('green');
 
-    const targetNestedElement = wrapper.find(".nested-element");
+    const targetNestedElement = wrapper.find('.nested-element');
 
-    expect(targetNestedElement.attr("style")).toContain("color: blue");
-    expect(targetNestedElement.css("color")).toEqual("blue");
+    expect(targetNestedElement.attr('style')).toContain('color: blue');
+    expect(targetNestedElement.css('color')).toEqual('blue');
   });
 });

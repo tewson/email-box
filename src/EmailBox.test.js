@@ -43,11 +43,17 @@ describe("EmailBox", () => {
       .relevant-class {
         color: green;
       }
+
+      .nested-element {
+        color: blue;
+      }
     `;
 
     const wrapper = render(
       <EmailBox css={css}>
-        <div className="relevant-class" />
+        <div className="relevant-class">
+          <h1 className="nested-element">Nested Element</h1>
+        </div>
       </EmailBox>
     );
 
@@ -55,5 +61,10 @@ describe("EmailBox", () => {
 
     expect(targetDiv.attr("style")).toContain("color: green");
     expect(targetDiv.css("color")).toEqual("green");
+
+    const targetNestedElement = wrapper.find(".nested-element");
+
+    expect(targetNestedElement.attr("style")).toContain("color: blue");
+    expect(targetNestedElement.css("color")).toEqual("blue");
   });
 });

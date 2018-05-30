@@ -1,7 +1,7 @@
 {
   "name": "email-box",
   "version": "0.0.1",
-  "description": "",
+  "description": "Render your React component in an email-safe way.",
   "main": "index.js",
   "scripts": {
     "test:watch": "jest --watch",

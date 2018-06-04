@@ -9,7 +9,13 @@ const EmailBox = ({ children, css }) => {
   );
 
   return (
-    <div className="email-box" dangerouslySetInnerHTML={{ __html: inlined }} />
+    <div
+      className="email-box"
+      style={{
+        maxWidth: 600,
+      }}
+      dangerouslySetInnerHTML={{ __html: inlined }}
+    />
   );
 };
 

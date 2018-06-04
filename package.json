@@ -8,7 +8,7 @@
     "build": "npm run clean && webpack",
     "test:watch": "jest --watch",
     "test": "jest",
-    "prepublish": "npm test"
+    "prepublish": "npm run build"
   },
   "author": "Tewson Seeoun <tewson.seeoun@gmail.com> (https://tewson.github.io/)",
   "license": "MIT",

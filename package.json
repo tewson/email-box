@@ -1,6 +1,6 @@
 {
   "name": "email-box",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "Render your React component in an email-safe way.",
   "main": "dist/EmailBox.js",
   "scripts": {

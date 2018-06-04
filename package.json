@@ -2,13 +2,14 @@
   "name": "email-box",
   "version": "0.0.1",
   "description": "Render your React component in an email-safe way.",
-  "main": "index.js",
+  "main": "dist/EmailBox.js",
   "scripts": {
+    "clean": "rimraf dist",
+    "build": "npm run clean && webpack",
     "test:watch": "jest --watch",
     "test": "jest"
   },
-  "author":
-    "Tewson Seeoun <tewson.seeoun@gmail.com> (https://tewson.github.io/)",
+  "author": "Tewson Seeoun <tewson.seeoun@gmail.com> (https://tewson.github.io/)",
   "license": "MIT",
   "peerDependencies": {
     "juice": ">=4.0.0",
@@ -21,6 +22,7 @@
   "devDependencies": {
     "babel-core": "^6.26.3",
     "babel-jest": "^23.0.1",
+    "babel-loader": "^7.1.4",
     "babel-preset-env": "^1.7.0",
     "babel-preset-react": "^6.24.1",
     "enzyme": "^3.3.0",
@@ -34,6 +36,9 @@
     "jest": "^23.0.1",
     "juice": "^4.2.3",
     "react": "^16.4.0",
-    "react-dom": "^16.4.0"
+    "react-dom": "^16.4.0",
+    "rimraf": "^2.6.2",
+    "webpack": "^4.10.2",
+    "webpack-cli": "^3.0.1"
   }
 }

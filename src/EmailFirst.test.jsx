@@ -4,34 +4,34 @@ import React from 'react';
 import { render, shallow } from 'enzyme';
 import toJson from 'enzyme-to-json';
 
-import EmailBox from './EmailBox';
+import EmailFirst from './EmailFirst';
 
-describe('EmailBox', () => {
+describe('EmailFirst', () => {
   it('should be defined', () => {
-    expect(EmailBox).toBeDefined();
+    expect(EmailFirst).toBeDefined();
   });
 
   it('should render correctly', () => {
-    expect(toJson(shallow(<EmailBox />))).toMatchSnapshot();
+    expect(toJson(shallow(<EmailFirst />))).toMatchSnapshot();
   });
 
   it('should render children correctly', () => {
     expect(
       toJson(
         shallow(
-          <EmailBox>
+          <EmailFirst>
             <div>
               <h1>Test</h1>
               <p>Children</p>
             </div>
-          </EmailBox>,
+          </EmailFirst>,
         ),
       ),
     ).toMatchSnapshot();
 
     const randomChild = <p>{Math.random()}</p>;
 
-    expect(shallow(<EmailBox>{randomChild}</EmailBox>).html()).toContain(
+    expect(shallow(<EmailFirst>{randomChild}</EmailFirst>).html()).toContain(
       shallow(randomChild).html(),
     );
   });
@@ -52,11 +52,11 @@ describe('EmailBox', () => {
     `;
 
     const wrapper = render(
-      <EmailBox css={css}>
+      <EmailFirst css={css}>
         <div className="relevant-class">
           <h1 className="nested-element">Nested Element</h1>
         </div>
-      </EmailBox>,
+      </EmailFirst>,
     );
 
     const targetDiv = wrapper.find('.relevant-class');

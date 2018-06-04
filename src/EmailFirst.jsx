@@ -3,14 +3,14 @@ import PropTypes from 'prop-types';
 import React from 'react';
 import { renderToStaticMarkup } from 'react-dom/server';
 
-const EmailBox = ({ children, css }) => {
+const EmailFirst = ({ children, css }) => {
   const inlined = juice(
     `<style>${css}</style>${renderToStaticMarkup(children)}`,
   );
 
   return (
     <div
-      className="email-box"
+      className="email-first"
       style={{
         maxWidth: 600,
       }}
@@ -19,9 +19,9 @@ const EmailBox = ({ children, css }) => {
   );
 };
 
-EmailBox.propTypes = {
+EmailFirst.propTypes = {
   children: PropTypes.node.isRequired,
   css: PropTypes.string.isRequired,
 };
 
-export default EmailBox;
+export default EmailFirst;

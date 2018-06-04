@@ -1,0 +1,33 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`EmailFirst should render children correctly 1`] = `
+<div
+  className="email-first"
+  dangerouslySetInnerHTML={
+    Object {
+      "__html": "<div><h1>Test</h1><p>Children</p></div>",
+    }
+  }
+  style={
+    Object {
+      "maxWidth": 600,
+    }
+  }
+/>
+`;
+
+exports[`EmailFirst should render correctly 1`] = `
+<div
+  className="email-first"
+  dangerouslySetInnerHTML={
+    Object {
+      "__html": "",
+    }
+  }
+  style={
+    Object {
+      "maxWidth": 600,
+    }
+  }
+/>
+`;

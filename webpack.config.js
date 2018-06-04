@@ -1,5 +1,5 @@
 module.exports = {
-  entry: './src/EmailBox.jsx',
+  entry: './src/EmailFirst.jsx',
   externals: {
     juice: {
       root: 'juice',
@@ -27,8 +27,8 @@ module.exports = {
     ],
   },
   output: {
-    filename: 'EmailBox.js',
-    library: 'EmailBox',
+    filename: 'EmailFirst.js',
+    library: 'EmailFirst',
     libraryTarget: 'umd',
   },
   target: 'node',

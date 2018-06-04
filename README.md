@@ -1,24 +1,10 @@
-# EmailBox
+# EmailFirst
 
-Render your React component in an email-safe way. Powered by [Juice](https://github.com/Automattic/juice).
-
-## Examples
-
-```js
-import { renderToString } from 'react-dom/server';
-
-import TodoList from 'components/TodoList';
-
-const css = fs.readFileSync('public/style.css');
-
-return renderToString(
-  <EmailBox css={css}>
-    <TodoList />
-  </EmailBox>,
-);
-```
+React components for rendering the same content for both email and the web. Powered by [Juice](https://github.com/Automattic/juice).
 
 # Todo
 
-* [ ] Add demo
-* [ ] Publish on npm
+- [x] Inlining css
+- [ ] Building block components
+- [ ] Add demo
+- [ ] Publish on npm

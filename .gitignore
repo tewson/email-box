@@ -1,5 +1,7 @@
 # Output of 'npm pack'
 *.tgz
 
+.vscode
+
 node_modules
 dist
